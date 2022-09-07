@@ -4,7 +4,8 @@ import json
 
 
 app = Flask(__name__)
-r = redis.from_url('redis://red-ccatbaha6gdmn7scpr40:6379')
+r = redis.from_url(os.environ['redis://red-ccatbaha6gdmn7scpr40:6379'])
+
 
 @app.route('/')
 def hello_world():
