@@ -13,7 +13,6 @@ def hello_world():
 def test():
     t = r.get('temp').decode("utf-8")
     h = r.get('humidity').decode("utf-8")
-    print(t, h)
     data = {'temp' : t, 'humidity' : h }
     return jsonify(data)
 
