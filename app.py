@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 
 
 app = Flask(__name__)
-r = redis.from_url(os.environ['REDIS_URL'])
+r = redis.Redis.from_url('redis://red-cccr2omn6mpkorrftm60:6379')
 
 @app.route('/')
 def hello_world():
