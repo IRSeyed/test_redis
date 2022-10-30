@@ -11,9 +11,8 @@ def hello_world():
 
 @app.route('/test')
 def test():
-    file = open('data.json', 'r')
-    t = r.get('temp')
-    h = r.get('hum')
+    t = r.get('temp').decode("utf-8")
+    h = r.get('hum').decode("utf-8")
     data = {'temp' : t, 'hum' : h }
     return jsonify(data)
 
