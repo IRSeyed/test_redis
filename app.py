@@ -12,14 +12,14 @@ def hello_world():
 @app.route('/test')
 def test():
     t = r.get('temp')
-    h = r.get('hum')
+    h = r.get('humidity')
     print(t, h)
-    data = {'temp' : t, 'hum' : h }
+    data = {'temp' : t, 'humidity' : h }
     return jsonify(data)
 
 @app.route('/getreq')
 def get_req():
     variable = request.get_json()
     r.set('temp', variable['temp'])
-    r.set('hume', variable['hum'])
+    r.set('humidity', variable['humidity'])
     return 'ok'
