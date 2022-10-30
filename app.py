@@ -11,8 +11,8 @@ def hello_world():
 
 @app.route('/test')
 def test():
-    t = r.get('temp')
-    h = r.get('humidity')
+    t = r.get('temp').decode("utf-8")
+    h = r.get('humidity').decode("utf-8")
     print(t, h)
     data = {'temp' : t, 'humidity' : h }
     return jsonify(data)
